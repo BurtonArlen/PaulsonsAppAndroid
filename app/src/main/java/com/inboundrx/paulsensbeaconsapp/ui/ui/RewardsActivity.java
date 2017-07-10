@@ -1,13 +1,15 @@
-package com.inboundrx.paulsensbeaconsapp;
+package com.inboundrx.paulsensbeaconsapp.ui.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LandingActivity extends AppCompatActivity {
+import com.inboundrx.paulsensbeaconsapp.R;
+
+public class RewardsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_landing);
+        setContentView(R.layout.activity_rewards);
     }
 }
