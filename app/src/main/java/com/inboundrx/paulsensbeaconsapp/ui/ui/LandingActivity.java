@@ -3,6 +3,9 @@ package com.inboundrx.paulsensbeaconsapp.ui.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -26,6 +29,21 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
         mHomeButton.setOnClickListener(this);
         mRewardsButton.setOnClickListener(this);
         mHistoryButton.setOnClickListener(this);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.user_account_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if (id == R.id.action_user){
+            Intent intent = new Intent(LandingActivity.this, UserActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     @Override
     public void onClick(View v){
