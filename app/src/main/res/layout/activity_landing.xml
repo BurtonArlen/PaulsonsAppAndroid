@@ -10,55 +10,38 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:background="@color/colorPrimary"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
         app:layout_constraintHorizontal_bias="0.0"
         android:alpha=".7"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:id="@+id/logoImage" />
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="200dp"
         android:background="@color/colorAccent"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:alpha=".7"
         app:layout_constraintTop_toBottomOf="@+id/logoImage"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:id="@+id/PaulsenImage" />
     <Button
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
         android:text="Online Prescription"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/PaulsenImage"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:id="@+id/onlineRxButton" />
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:background="@color/colorPrimaryDark"
         android:layout_height="170dp"
         android:id="@+id/dailyDealImage"
-        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/onlineRxButton"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp" />
+        app:layout_constraintTop_toBottomOf="@+id/onlineRxButton" />
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="0dp"
@@ -66,36 +49,28 @@
         android:background="@color/colorAccent"
         android:textColor="#fff"
         android:text="Daily Deals"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@+id/dailyDealImage"
         android:layout_marginTop="2dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:id="@+id/dailyDealText" />
     <ImageView
         android:layout_width="0dp"
         android:background="@color/colorPrimary"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:id="@+id/bottomNavBar" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/homeButton" />
+        android:id="@+id/homeButton"
+        android:layout_marginStart="16dp" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -103,8 +78,8 @@
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"
-        android:id="@+id/aboutButton" />
+        android:id="@+id/aboutButton"
+        android:layout_marginEnd="16dp" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -112,10 +87,9 @@
         app:layout_constraintLeft_toRightOf="@+id/homeButton"
         android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"
         android:id="@+id/rewardsButton"
         app:layout_constraintRight_toLeftOf="@+id/constraintGuide"
-        android:layout_marginRight="0dp" />
+        android:layout_marginStart="16dp" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -123,10 +97,9 @@
         app:layout_constraintRight_toLeftOf="@+id/aboutButton"
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"
         android:id="@+id/historyButton"
         app:layout_constraintLeft_toRightOf="@+id/constraintGuide"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginEnd="16dp" />
     <ImageView
         android:layout_width="8dp"
         android:layout_height="50dp"
@@ -135,7 +108,22 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"
-        android:id="@+id/constraintGuide" />
+        android:id="@+id/constraintGuide"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+    <TextView
+        android:id="@+id/productNameText"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:layout_width="100dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintGuide"
+        android:textColor="#fff"
+        android:background="@color/colorAccent"
+        android:textAlignment="center"/>
 
 </android.support.constraint.ConstraintLayout>
