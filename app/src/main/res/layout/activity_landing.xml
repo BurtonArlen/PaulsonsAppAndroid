@@ -20,7 +20,7 @@
         android:alpha=".7"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:id="@+id/imageView" />
+        android:id="@+id/logoImage" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -31,10 +31,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:alpha=".7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/logoImage"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:id="@+id/imageView2" />
+        android:id="@+id/PaulsenImage" />
     <Button
         android:layout_width="0dp"
         android:layout_height="75dp"
@@ -43,20 +43,20 @@
         android:layout_marginLeft="8dp"
         android:text="Online Prescription"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/PaulsenImage"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:id="@+id/button" />
+        android:id="@+id/onlineRxButton" />
     <ImageView
         android:layout_width="match_parent"
         android:background="@color/colorPrimaryDark"
         android:layout_height="170dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/dailyDealImage"
         android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/onlineRxButton"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp" />
     <TextView
@@ -70,11 +70,11 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/dailyDealImage"
         android:layout_marginTop="2dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:id="@+id/textView" />
+        android:id="@+id/dailyDealText" />
     <ImageView
         android:layout_width="0dp"
         android:background="@color/colorPrimary"
@@ -86,7 +86,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:id="@+id/imageView8" />
+        android:id="@+id/bottomNavBar" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -95,7 +95,7 @@
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/imageView4" />
+        android:id="@+id/homeButton" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -104,28 +104,28 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="0dp"
-        android:id="@+id/imageView5" />
+        android:id="@+id/aboutButton" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@color/colorAccent"
-        app:layout_constraintLeft_toRightOf="@+id/imageView4"
+        app:layout_constraintLeft_toRightOf="@+id/homeButton"
         android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="0dp"
-        android:id="@+id/imageView6"
-        app:layout_constraintRight_toLeftOf="@+id/imageView9"
+        android:id="@+id/rewardsButton"
+        app:layout_constraintRight_toLeftOf="@+id/constraintGuide"
         android:layout_marginRight="0dp" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@color/colorAccent"
-        app:layout_constraintRight_toLeftOf="@+id/imageView5"
+        app:layout_constraintRight_toLeftOf="@+id/aboutButton"
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="0dp"
-        android:id="@+id/imageView7"
-        app:layout_constraintLeft_toRightOf="@+id/imageView9"
+        android:id="@+id/historyButton"
+        app:layout_constraintLeft_toRightOf="@+id/constraintGuide"
         android:layout_marginLeft="0dp" />
     <ImageView
         android:layout_width="8dp"
@@ -136,6 +136,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="0dp"
-        android:id="@+id/imageView9" />
+        android:id="@+id/constraintGuide" />
 
 </android.support.constraint.ConstraintLayout>
