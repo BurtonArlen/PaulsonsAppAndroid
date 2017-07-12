@@ -1,8 +1,7 @@
 package com.inboundrx.paulsensbeaconsapp.ui.services;
 
-import android.util.Log;
-
-import com.inboundrx.paulsensbeaconsapp.ui.Constants;
+import com.inboundrx.paulsensbeaconsapp.ui.CallConstants;
+import com.inboundrx.paulsensbeaconsapp.ui.StringConstants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,10 +24,10 @@ import okhttp3.Response;
 public class WebRequest {
     public static void dataRequest(String /*placeholder*/, Callback callback){
         OkHttpClient client = new OkHttpClient.Builder().build();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.ENDPOINT_QUERY, /*placeholder*/)
-                .addQueryParameter(Constants.ENDPOINT_KEYWORD, Constants.ENDPOINT_TYPE)
-                .addQueryParameter(Constants.KEY_PARAM, Constants.BEER_KEY);
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(CallConstants.BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter(StringConstants.ENDPOINT_QUERY, /*placeholder*/)
+                .addQueryParameter(StringConstants.ENDPOINT_KEYWORD, StringConstants.ENDPOINT_TYPE)
+                .addQueryParameter(StringConstants.KEY_PARAM, StringConstants.);
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);

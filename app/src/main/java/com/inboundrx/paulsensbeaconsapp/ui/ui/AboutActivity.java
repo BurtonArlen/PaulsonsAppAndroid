@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.inboundrx.paulsensbeaconsapp.R;
-import com.inboundrx.paulsensbeaconsapp.ui.Constants;
+import com.inboundrx.paulsensbeaconsapp.ui.StringConstants;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,11 +29,11 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         mHomeButton.setOnClickListener(this);
         mRewardsButton.setOnClickListener(this);
         mHistoryButton.setOnClickListener(this);
-        mPaulsensInfo.setText(Constants.PAULSENS_BIO
-                            + Constants.PAULSENS_HOURS
-                            + Constants.PAULSENS_WEBSITE
-                            + Constants.PAULSENS_ADDRESS
-                            + Constants.PAULSENS_PHONE);
+        mPaulsensInfo.setText(StringConstants.PAULSENS_BIO
+                            + StringConstants.PAULSENS_HOURS
+                            + StringConstants.PAULSENS_WEBSITE
+                            + StringConstants.PAULSENS_ADDRESS
+                            + StringConstants.PAULSENS_PHONE);
     }
     @Override
     public void onClick(View v){
