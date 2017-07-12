@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>20</y>
+      <w>128</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Item
+--
+type: String { notEmpty }
+featured: Boolean = false { include(true, false) }
+daily_deal: Boolean = false { include(true, false) }
+cost: Float = 0.0 { notEmpty }
+title: String { notEmpty, unique }
+description: Text { notEmpty }
+image: File
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>108</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Product</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>108</y>
+      <w>64</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Promotion (voucher?)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>20</y>
+      <w>104</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Beacon
+--
+uuid: String { notEmpty }
+major_uuid: String { notEmpty, unique }
+minor_uuid: String { notEmpty, unique }
+title: String { notEmpty, unique }
+description: Text { notEmpty }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>20</y>
+      <w>168</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Currency
+--
+cashable_type: String
+cashable_id: Long
+type: String
+value: Float = 0.0 { numerical( &gt; 0 ) }
+--
++ spend!(value: Float): Boolean
++ can_spend?(value: Float): Boolean
+# set_last_transmutation_amount(amount: Float): Float
+# set_last_transmutation_date(date: DateTime = Now): DateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>112</y>
+      <w>96</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>Credit
+--
+validate_incrementation_limit(): Void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>656</x>
+      <y>84</y>
+      <w>12</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>436</x>
+      <y>76</y>
+      <w>12</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>76</y>
+      <w>12</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1056</x>
+      <y>20</y>
+      <w>80</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Notification
+--
+title: String { notEmpty, unique }
+description: Text { notEmpty, unique }
+entry_message: String
+exit_message: String
+image: File</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>212</x>
+      <y>20</y>
+      <w>148</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Order
+--
+user: User
+resource_state: String = "pending"
+completion_date: DateTime
+--
++ totalCost(): Float
+# set_completion_date!(date: DateTime = Now): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>252</y>
+      <w>96</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>User
+--
+email: String
+password: String
+phone: String
+address: String
+visit_count: Int = 0
+--
+admin?(user: User = self): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>112</y>
+      <w>140</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Reward
+--
+redeemed_date: DateTime
+resource_state: String = "pending"
+--
+set_redeemed_date!(date: DateTime = Now): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>20</y>
+      <w>92</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>LineItem
+--
+cost: Float = Item.cost { notEmpty }
+item: Item { notEmpty }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>64</y>
+      <w>296</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=belongs_to User
+m2=has_many Order
+ &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;510.0;720.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>88</x>
+      <y>32</y>
+      <w>132</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=belongs_to Order
+m2=has_many LineItem
+ &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;310.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>656</x>
+      <y>128</y>
+      <w>52</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=belongs_to User
+m2=has_one Credit
+ &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>668</x>
+      <y>144</y>
+      <w>228</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=belongs_to User
+m2=has_many Reward
+ &gt;</panel_attributes>
+    <additional_attributes>450.0;10.0;450.0;300.0;10.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>32</y>
+      <w>160</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=has_many Notification
+m2=belongs_to Beacon
+&lt; </panel_attributes>
+    <additional_attributes>10.0;20.0;380.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>88</x>
+      <y>0</y>
+      <w>312</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=has_one Item
+&lt; </panel_attributes>
+    <additional_attributes>10.0;60.0;280.0;60.0;280.0;20.0;700.0;20.0;700.0;60.0;760.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>0</y>
+      <w>296</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=has_one Item
+ &gt;</panel_attributes>
+    <additional_attributes>10.0;150.0;130.0;150.0;130.0;20.0;590.0;20.0;590.0;330.0;720.0;330.0</additional_attributes>
+  </element>
+</diagram>
