@@ -1,4 +1,4 @@
-package com.inboundrx.paulsensbeaconsapp.ui.ui;
+package com.inboundrx.paulsensbeaconsapp.sourceCode.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,17 +8,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.estimote.sdk.BeaconManager;
+import com.estimote.sdk.Region;
+import com.estimote.sdk.SystemRequirementsChecker;
 import com.inboundrx.paulsensbeaconsapp.R;
+import com.inboundrx.paulsensbeaconsapp.sourceCode.interfaces.BeaconCallback;
+import com.inboundrx.paulsensbeaconsapp.sourceCode.managers.BeaconRangingManager;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class LandingActivity extends AppCompatActivity implements View.OnClickListener{
+public class LandingActivity extends AppCompatActivity implements View.OnClickListener, BeaconCallback{
     @Bind(R.id.aboutButton) ImageView mAboutButton;
     @Bind(R.id.homeButton) ImageView mHomeButton;
     @Bind(R.id.rewardsButton) ImageView mRewardsButton;
     @Bind(R.id.historyButton) ImageView mHistoryButton;
+    private BeaconRangingManager beaconFinder = new BeaconRangingManager();
+    private BeaconManager beaconManager;
+    private Region region;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +38,13 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
         mHomeButton.setOnClickListener(this);
         mRewardsButton.setOnClickListener(this);
         mHistoryButton.setOnClickListener(this);
+        beaconFinder.findBeacon(this);
     }
+
+    public void beaconCallBack() {
+        System.out.println("I've been called back");
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -45,6 +60,8 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     @Override
     public void onClick(View v){
         if (v == mAboutButton){
@@ -63,5 +80,18 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = new Intent(LandingActivity.this, LandingActivity.class);
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onPause(){
+        beaconFinder.beaconPause();
+        super.onPause();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        beaconFinder.beaconResume();
+        SystemRequirementsChecker.checkWithDefaultDialogs(this);
+
     }
 }

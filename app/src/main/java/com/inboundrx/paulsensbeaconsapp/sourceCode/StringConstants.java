@@ -1,6 +1,4 @@
-package com.inboundrx.paulsensbeaconsapp.ui;
-
-import com.inboundrx.paulsensbeaconsapp.BuildConfig;
+package com.inboundrx.paulsensbeaconsapp.sourceCode;
 
 /**
  * Created by arlen on 7/10/17.

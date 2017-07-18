@@ -1,4 +1,4 @@
-package com.inboundrx.paulsensbeaconsapp.ui.models;
+package com.inboundrx.paulsensbeaconsapp.sourceCode.models;
 
 /**
  * Created by arlen on 7/12/17.
