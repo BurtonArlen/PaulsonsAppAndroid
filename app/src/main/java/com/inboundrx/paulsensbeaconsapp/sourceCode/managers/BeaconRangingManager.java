@@ -2,14 +2,13 @@ package com.inboundrx.paulsensbeaconsapp.sourceCode.managers;
 
 import android.content.Context;
 import android.util.Log;
-import android.view.View;
 
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.inboundrx.paulsensbeaconsapp.sourceCode.BaseConstants;
 import com.inboundrx.paulsensbeaconsapp.sourceCode.interfaces.BeaconCallback;
-import com.inboundrx.paulsensbeaconsapp.sourceCode.interfaces.BeaconCaller;
+import com.inboundrx.paulsensbeaconsapp.sourceCode.interfaces.Caller;
 import com.inboundrx.paulsensbeaconsapp.sourceCode.ui.LandingActivity;
 
 import java.util.List;
@@ -21,8 +20,8 @@ import java.util.UUID;
 
 public class BeaconRangingManager {
     private LandingActivity landingActivity;
-    private BeaconCaller caller;
     private BeaconManager beaconManager;
+    private Caller caller;
     private Region region;
     private boolean stringDecider;
     private String foundBeacon;
@@ -34,7 +33,7 @@ public class BeaconRangingManager {
                 if (!list.isEmpty()) {
                     final String[] beacons = new String[]{"Found Beacon", "No Beacon"};
                     Log.d("Paulsons Beaon App: ", BaseConstants.BEACON_UUID);
-                    caller.main(beacons);
+                    Caller.main(beacons);
                 }
             }
         });
